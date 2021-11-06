@@ -1,27 +1,15 @@
 import React from 'react';
 import './style.css';
+import { getTime } from '../../utils/utils';
 
 import Spinner from '../Spinner/Spinner';
 
 const CurrentWeather = ({ weather, city }) => {
-  const getTemperature = (temperature) => {
-    return Math.round(temperature);
-  };
-
-  const getTime = (time) => {
-    const milliseconds = time * 1000;
-    const dateObject = new Date(milliseconds);
-    return dateObject.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
-
   return (
     <div
       className={
-        weather && getTemperature(weather.main.temp) < 10
-          ? 'weather__current--cold'
+        weather && Math.round(weather.main.temp) < 10
+          ? 'weather__current weather__current--cold'
           : 'weather__current'
       }
     >
@@ -35,7 +23,7 @@ const CurrentWeather = ({ weather, city }) => {
           <div className="weather__inner weather__inner--center">
             <div className="weather__section weather__section--temp">
               <span className="weather__temp-value" id="teplota">
-                {getTemperature(weather.main.temp)}
+                {Math.round(weather.main.temp)}
               </span>
               <span className="weather__temp-unit">°C</span>
               <div className="weather__description" id="popis">
