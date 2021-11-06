@@ -33,9 +33,10 @@ const App = () => {
   useEffect(() => {
     fetchWeather(city);
     fetchForecasts(city);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
-  const handleClick = (event) => {
+  const handleChange = (event) => {
     setCity(event.target.innerText);
   };
 
@@ -43,9 +44,15 @@ const App = () => {
     <div className="App">
       <div className="container">
         <h1>My Weather App</h1>
-        <select name="city" id="citySelect" className="select" value={city}>
+        <select
+          name="city"
+          id="citySelect"
+          className="select"
+          value={city}
+          onChange={handleChange}
+        >
           {cities.map((city) => (
-            <option value={city} onClick={handleClick}>
+            <option value={city} key={city}>
               {city}
             </option>
           ))}
