@@ -37,7 +37,7 @@ const App = () => {
   }, [city]);
 
   const handleChange = (event) => {
-    setCity(event.target.innerText);
+    setCity(event.target.value);
   };
 
   return (
