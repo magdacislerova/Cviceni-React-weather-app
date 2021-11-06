@@ -16,7 +16,7 @@ const App = () => {
 
   const fetchWeather = (city) => {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_ID}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_ID}`,
     )
       .then((response) => response.json())
       .then((json) => setWeather(json));
@@ -24,7 +24,7 @@ const App = () => {
 
   const fetchForecasts = (city) => {
     fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_ID}`,
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_ID}`,
     )
       .then((response) => response.json())
       .then((json) => setForecasts(getFilteredForecasts(json.list)));
