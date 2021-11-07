@@ -39,40 +39,6 @@ h1 {
   padding: 20px;
 }
 
-.button-group {
-  width: 350px;
-  margin: 10px auto;
-  display: flex;
-  border-radius: 10px;
-  border: 5px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
-}
-.button {
-  flex: 1 1 auto;
-  padding: 10px;
-  font-family: var(--font-primary);
-  font-size: var(--font-medium);
-  font-weight: 400;
-  background: var(--button);
-  color: var(--white);
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-}
-.button:hover,
-.button:focus,
-.button:active {
-  background: var(--button-active);
-}
-.button + .button {
-  border-left: 1px solid rgba(0, 0, 0, 0.5);
-}
-.button:first-child {
-  border-radius: 5px 0 0 5px;
-}
-.button:last-child {
-  border-radius: 0 5px 5px 0;
-}
 .select {
   width: 350px;
   max-width: 100%;
